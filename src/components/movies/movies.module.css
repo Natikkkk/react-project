@@ -1,0 +1,19 @@
+.wrap{
+    padding: 50px;
+    background: mediumvioletred;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+
+.MoviesDiv{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 50px;
+    margin-top: 50px;
+}

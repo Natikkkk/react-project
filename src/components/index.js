@@ -1,0 +1,6 @@
+export * from './genre/Genre'
+export * from './footer/Footer'
+export * from './header/Header'
+export * from './movies/Movies'
+export * from './movieCard/MovieCard'
+export * from './headerMenu/HeaderMenu'

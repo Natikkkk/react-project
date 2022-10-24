@@ -1,0 +1,35 @@
+@import "https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap";
+
+.genre{
+    font-family: 'Viaoda Libre', cursive;
+    text-align: center;
+    vertical-align: center;
+    line-height: 90px;
+    font-size: 40px;
+    background: black;
+    height: 110px;
+    font-weight: 600;
+    color: silver;
+}
+
+.genreActive{
+    font-family: 'Viaoda Libre', cursive;
+    text-align: center;
+    vertical-align: center;
+    line-height: 90px;
+    font-size: 40px;
+    background: darkred;
+    height: 110px;
+    transition: 0.5s;
+    font-weight: 600;
+    scale: 102%;
+    color: darkcyan;
+}
+
+.genresDiv{
+    padding: 10px;
+    width: 80%;
+    height: 130px;
+    border-radius: 30px;
+    cursor: pointer;
+}

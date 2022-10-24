@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap');
+
+.wrap{
+    height: 125px;
+}
+
+.header{
+    width: 100%;
+    height: 100px;
+    padding: 20px 0 0;
+    background: aqua;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+}
+.logo{
+    font-family: 'Fuzzy Bubbles', cursive;
+    font-size: 64px;
+    font-weight: 500;
+    color: black;
+}
+.input{
+    width: 240px;
+    height: 50px;
+    outline: none;
+    border: none;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-bottom: 2px solid;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 500;
+}
+.searchIcon{
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    cursor: pointer;
+    color: lightyellow;
+}
+.searchIcon:hover{
+    cursor: pointer;
+}
+.useDiv{
+    width: 60px;
+    height: 30px;
+    background: lightyellow;
+}
+
+.inputBlock{
+    position: relative;
+    width: 200px;
+}
+
+.inputBlock input{
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: cadetblue;
+    outline: none;
+    border: none;
+    color: coral;
+    font-size: 1em;
+}
+.inputBlock span{
+    position: absolute;
+    padding: 20px 10px 10px;
+    font-size: 1em;
+    color: chartreuse;
+    pointer-events: none;
+}
+
+.inputBlock input:valid ~ span,
+.inputBlock input:focus ~ span{
+    color: lightyellow;
+    transform: translateX(-8px) translateY(-34px);
+    font-size: 0.75em;
+}
+
+.inputBlock input:valid ~ .searchIcon,
+.inputBlock input:focus ~ .searchIcon{
+    color: darkblue;
+}
+
+.inputBlock i{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background: cadetblue;
+    border-radius: 4px;
+
+}
+
