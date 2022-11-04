@@ -1,38 +1,24 @@
-/*import logo from './logo.svg';
-import './App.css';
+import {Navigate, Route, Routes} from "react-router-dom";
+
+import {MaineLayout} from "./layouts/maineLayout";
+import {MainePage, FilmInfoPage, FavoritePage, WatchedPage} from "./pages";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
-export default App;
-*/
 
-import {MainePage} from "./pages";
-
-function App(){
-  return(
-      <>
-      <MainePage/>
-      </>
-  );
+    return (
+        <Routes>
+            <Route path={'/'} element={<Navigate to={'/maine'}/>}/>
+            <Route path={'/maine'} element={<MaineLayout/>}>
+                <Route path={'/maine'} element={<Navigate to={'/maine/films'}/>}/>
+                <Route path={'films'} element={<MainePage/>}/>
+                <Route path={'movie/:id'} element={<FilmInfoPage/>}/>
+                <Route path={'favorite'} element={<FavoritePage/>}/>
+                <Route path={'watched'} element={<WatchedPage/>}/>
+            </Route>
+        </Routes>
+    );
 }
 
 export default App;

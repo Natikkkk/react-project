@@ -6,30 +6,32 @@
     vertical-align: center;
     line-height: 90px;
     font-size: 40px;
-    background: black;
+    background: url("https://www.pngplay.com/wp-content/uploads/2/Filmstrip-Download-Free-PNG-1.png") 0 0/100% 100% no-repeat;
     height: 110px;
     font-weight: 600;
-    color: silver;
+    color: grey;
 }
 
 .genreActive{
-    font-family: 'Viaoda Libre', cursive;
+    font-family: 'Playfair Display', serif;
     text-align: center;
     vertical-align: center;
     line-height: 90px;
     font-size: 40px;
-    background: darkred;
+    background: url("https://www.pngplay.com/wp-content/uploads/2/Filmstrip-Download-Free-PNG-1.png") 0 0/100% 100% no-repeat;
     height: 110px;
     transition: 0.5s;
     font-weight: 600;
     scale: 102%;
-    color: darkcyan;
+    color: mediumvioletred;
+
 }
 
-.genresDiv{
+
+.genresDiv {
     padding: 10px;
     width: 80%;
     height: 130px;
-    border-radius: 30px;
+    border-radius: 20px ;
     cursor: pointer;
 }

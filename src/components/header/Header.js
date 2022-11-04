@@ -1,32 +1,42 @@
-import {useState} from "react";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import  {faXmark, faSearch} from "@fortawesome/free-solid-svg-icons";
+import {useNavigate} from "react-router-dom";
+import {faXmark, faSearch, faCircleUser} from '@fortawesome/free-solid-svg-icons'
 
-import  css from './header.module.css';
-import {movieActions} from '../../redux';
-import {HeaderMenu} from '../headerMenu/HeaderMenu';
+import css from './header.module.css'
+import {movieActions} from "../../redux";
+import {HeaderMenu} from "../headerMenu/HeaderMenu";
 
-const Header = () => {
-    const [inputValue, setInputValue] = useState('')
-    const dispath = useDispatch()
+
+
+const Header = ({setActivePopup}) => {
+    const {userName} = useSelector(state => state.usersFilmsReducer)
+    const {search} = useSelector(state => state.movieReducer)
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+
 
     const changeValue = (value) => {
-        setInputValue(value)
-        dispath(movieActions.setSearch(value))
+        dispatch(movieActions.setSearch(value))
     }
-    return(
+
+
+
+    return (
         <div className={css.wrap}>
             <header className={css.header}>
-                <div className={css.logo}>Nataliia Ozerova</div>
+                <div onClick={()=>navigate('/maine/films')} className={css.logo}>Nataliia Ozerova</div>
                 <HeaderMenu/>
-                <div className={css.inputBlock}>
-                    <input type="text" required="required" value={inputValue} onChange={(elem.target.value)}/>
+                <div className={css.inputBlock} >
+                    <input type="text" required="required" value={search} onChange={(elem)=>changeValue(elem.target.value)}/>
                     <span>Find</span>
-                    <div className={css.searchIcon}>{inputValue?<FontAwesomeIcon onClick={()=>changeValue('')} icon {faXmark}/>:<FontAwesomeIcon icon={faSearch}/>}</div>
-                  <i></i>
+                    <div className={css.searchIcon}>{search?<FontAwesomeIcon onClick={()=>changeValue('')} icon={faXmark} />:<FontAwesomeIcon icon={faSearch} />}</div>
+                    <i></i>
                 </div>
-                <div className={css.userDiv}>user</div>
+                <div className={css.userDiv}>
+                    <FontAwesomeIcon className={css.userIcon} icon={faCircleUser} />
+                    {userName?<p onClick={()=>setActivePopup(true)}>{userName}</p>:<p onClick={()=>setActivePopup(true)}>User</p>}
+                </div>
             </header>
         </div>
     );

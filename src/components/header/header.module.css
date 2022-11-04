@@ -2,27 +2,35 @@
 
 .wrap{
     height: 125px;
+@import url('https://fonts.googleapis.com/css2?family=Inspiration&display=swap'); }
+
+.wrap{
+    height: 125px;
 }
 
 .header{
     width: 100%;
-    height: 100px;
+    height: 110px;
     padding: 20px 0 0;
-    background: aqua;
+    background: chocolate;
     display: flex;
     justify-content: space-around;
     align-items: center;
     position: fixed;
+    z-index: 100000;
+    border-bottom: 2px solid maroon;
 }
 .logo{
-    font-family: 'Fuzzy Bubbles', cursive;
+    font-family: 'Inspiration', cursive;
     font-size: 64px;
     font-weight: 500;
-    color: black;
+    color:gold;
+    cursor: pointer;
+
 }
 .input{
-    width: 240px;
-    height: 50px;
+    width: 200px;
+    height: 30px;
     outline: none;
     border: none;
     border-top-right-radius: 15px;
@@ -31,7 +39,10 @@
     padding: 10px;
     font-size: 18px;
     font-weight: 500;
+
 }
+
+
 .searchIcon{
     width: 10px;
     height: 10px;
@@ -39,16 +50,32 @@
     right: 20px;
     top: 15px;
     cursor: pointer;
-    color: lightyellow;
+    z-index: 10;
+    color: yellow;
+
 }
+
 .searchIcon:hover{
     cursor: pointer;
 }
-.useDiv{
-    width: 60px;
-    height: 30px;
-    background: lightyellow;
+.userDiv {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 8%;
 }
+
+.userIcon{
+    color:hotpink;
+    font-size: 40px;
+}
+
+.userDiv p{
+    font-size: 16px;
+    color: khaki;
+    cursor: pointer;
+}
+
 
 .inputBlock{
     position: relative;
@@ -59,30 +86,37 @@
     position: relative;
     width: 100%;
     padding: 20px 10px 10px;
-    background: cadetblue;
+    background: transparent;
     outline: none;
     border: none;
-    color: coral;
+    color: cornflowerblue;
     font-size: 1em;
+    letter-spacing: 0.05em;
+    z-index: 10;
 }
+
 .inputBlock span{
     position: absolute;
+    left: 0;
+    top: 0;
     padding: 20px 10px 10px;
     font-size: 1em;
-    color: chartreuse;
+    color:greenyellow;
     pointer-events: none;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
 }
 
 .inputBlock input:valid ~ span,
 .inputBlock input:focus ~ span{
-    color: lightyellow;
+    color: lightblue;
     transform: translateX(-8px) translateY(-34px);
     font-size: 0.75em;
 }
 
 .inputBlock input:valid ~ .searchIcon,
 .inputBlock input:focus ~ .searchIcon{
-    color: darkblue;
+    color: lightgreen;
 }
 
 .inputBlock i{
@@ -91,8 +125,24 @@
     bottom: 0;
     width: 100%;
     height: 3px;
-    background: cadetblue;
+    background: rebeccapurple;
     border-radius: 4px;
+    transition: 0.5s;
+    pointer-events: none;
+    z-index: 9;
+}
+.inputBlock input:valid ~ i,
+.inputBlock input:focus ~ i{
+    height: 40px;
+    z-index: 0;
 
 }
 
+@media (max-width: 1000px) {
+    .logo{
+        font-size: 30px;
+    }
+    .inputBlock{
+        width: 130px;
+    }
+}

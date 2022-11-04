@@ -1,0 +1,16 @@
+.wrap{
+    box-sizing: border-box;
+    width: 80%;
+    margin: 50px auto;
+    background: var(--minor-backround-color);
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.wrap h2{
+    text-align: center;
+    font-size: 30px;
+    color: var(--maine-color);
+    text-decoration: underline;
+    margin-bottom: 50px;
+}
